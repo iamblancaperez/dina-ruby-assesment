@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920124448) do
+ActiveRecord::Schema.define(version: 20170920124906) do
+
+  create_table "permissions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
