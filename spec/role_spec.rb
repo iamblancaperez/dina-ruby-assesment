@@ -14,5 +14,10 @@ describe Role do
       @role.name = nil
       expect(@role).to_not be_valid
     end 
+
+    #Associations
+    it "should have_many :permissions" do
+      expect(Role.reflect_on_association(:permissions).macro).to eq :has_many
+    end 
   end
 end
