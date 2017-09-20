@@ -13,6 +13,8 @@ describe Permission do
     it "is not valid without a name" do
       @permi.name = nil
       expect(@permi).to_not be_valid
-    end 
+    end
+
+    it { should belong_to(:role) }
   end
 end
