@@ -1,3 +1,3 @@
-  class User < ActiveRecord::Base
-
- end
+class User < ActiveRecord::Base
+	validates_presence_of :name
+end
