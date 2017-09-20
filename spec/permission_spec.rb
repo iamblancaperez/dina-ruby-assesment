@@ -4,6 +4,8 @@ describe Permission do
 
   before :each do
     @permi = Permission.new(name: "PermissionName")
+    @role = Role.new
+    @role.permissions << @permi
   end
 
   describe "valid attributes" do
@@ -15,6 +17,9 @@ describe Permission do
       expect(@permi).to_not be_valid
     end
 
-    it { should belong_to(:role) }
+		it "belongs_to role" do
+      assoc = Permission.reflect_on_association(:role)
+      expect(assoc.macro).to eq :belongs_to
+    end
   end
 end

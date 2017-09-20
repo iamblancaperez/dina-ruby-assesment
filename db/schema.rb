@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920124906) do
+ActiveRecord::Schema.define(version: 20170920131033) do
 
   create_table "permissions", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_id"
+    t.index ["role_id"], name: "index_permissions_on_role_id"
   end
 
   create_table "roles", force: :cascade do |t|
